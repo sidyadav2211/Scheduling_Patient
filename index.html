@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+     <!-- Vuejs -->
+     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+     <!-- Bulma Css -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+     <!-- font Aws -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+     <!-- Style -->
+     <link rel="stylesheet" href="style.css">
+     
+</head>
+<body>
+    <div id="form-data" class="container">
+        
+        <section v-if="steps==1">
+            <h1 class="title">Booking</h1>
+            <p class="subtitle" >{{ error }}</p>
+            <div class="fieldd">
+                <label class="label ">Patient Name :</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input is-rounded is-medium is-info" v-model="bookingData.name" type="text"  >
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                    
+                  </div>
+            </div>
+            <div class="field">
+                <label class="label "> Date :</label>
+                <div class="control has-icons-left has-icons-left">
+                    <input type="date" v-model="bookingData.appDate" class="input is-rounded is-medium is-info"   placeholder="Patient Name">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-calendar-alt"></i>
+                     </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label ">From Time :</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input type="time"  v-model="bookingData.appTime" class="input is-rounded is-medium is-info"   placeholder="Patient Name">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-clock"></i>
+                     </span>
+                </div>
+
+            </div>
+            <div class="field">
+                <label class="label ">Til Time :</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input type="time" v-model="bookingData.appTimeS" class="input is-rounded is-medium is-info"   placeholder="Patient Name">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-clock"></i>
+                     </span>
+                </div>
+              
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-success" v-on:click.prevent="nextStep" > Submit</button>
+                    </div>
+    
+                </div>
+            </section>
+       
+            <section v-if="steps==2">
+             <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+                 <div class="navbar-brand">
+                     <a class="nav-item" href="#">
+                         <img src="index.png" style="background-color: aquamarine;" alt="logo_img" width="122" height="28">
+                     </a>
+                     <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                         <span aria-hidden="true"></span>
+                         <span aria-hidden="true"></span>
+                         <span aria-hidden="true"></span>
+                       </a> -->
+                 </div>
+     
+             </nav>
+             <br>
+             <hr>
+             <div class="field">
+                 <div class="control">
+                     <button class="button is-info" v-on:click="prevStep">Back</button>
+                 </div>
+             </div>
+             <div class="show-content">
+                <h2 style="text-align: center;" class="title is-primary ">Appointment Confirmed</h2>
+                <hr>
+             <p class="subtitle">Patient Name : <strong>{{ bookingData.name }}</strong> </p>
+             <p class="subtitle" > Appointment Date : <strong>{{ bookingData.appDate }} </strong></p>
+             <p class="subtitle"> Time : <strong>{{ bookingData.appTime }} </strong> To : <strong>{{ bookingData.appTimeS }}</strong> </p>
+             <p class="subtitle"> Status : <strong>Confirmed <strong> </p>
+             </div>
+             
+     
+             <!-- <div class="field">
+                 <div class="control">
+                     <button class="button is-info" type="pr"></button>
+                 </div> -->
+             
+                 <p class="button">
+                    <button v-on:click.prevent="printData" class="button">
+                        <span class="icon">
+                            <i class="fas fa-print"></i>
+
+                        </span>
+                        <span>Print </span>
+                     </button>
+                 </p>
+            
+            </section>
+            
+            </div>
+            
+            <!-- <span  >{{ error }}</span>
+            <form >
+                <label for="names">Patient Name :</label>
+                <input type="text" id="names"  >
+                <br>
+                <label for="date">Date :</label>
+                <input type="date" id="date" v-model="bookingData.appDate">
+                <br>
+                <label for="start">From Time :</label>
+                <input type="time" id="start" v-model="bookingData.appTime">
+                <br>
+                <label for="end">Til :</label>
+                <input type="time" id="end" v-model="bookingData.appTimeS">
+                <br>
+               <button type="submit" v-on:click.prevent="nextStep" > Book</button>
+            </form> -->
+       
+    
+    <script src="index.js"></script>
+</body>
+</html>
