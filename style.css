@@ -1,8 +1,10 @@
 .show-content{
+    font-family: 'Exo', sans-serif;
     border: 2px solid skyblue;
     border-radius: 10px;
-    padding:15px;
-    margin: 20px;
-    font-size: 40px;
+    padding:10px;
+    margin: 18px;
+    font-size: 20px;
     font-weight: bold;
+    
 }

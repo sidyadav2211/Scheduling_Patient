@@ -13,6 +13,9 @@
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
      <!-- Style -->
      <link rel="stylesheet" href="style.css">
+     <!-- google font -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400&display=swap" rel="stylesheet"> 
      
 </head>
 <body>
@@ -69,34 +72,112 @@
             </section>
        
             <section v-if="steps==2">
-             <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-                 <div class="navbar-brand">
-                     <a class="nav-item" href="#">
-                         <img src="index.png" style="background-color: aquamarine;" alt="logo_img" width="122" height="28">
-                     </a>
-                     <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                         <span aria-hidden="true"></span>
-                         <span aria-hidden="true"></span>
-                         <span aria-hidden="true"></span>
-                       </a> -->
-                 </div>
-     
-             </nav>
-             <br>
-             <hr>
-             <div class="field">
-                 <div class="control">
-                     <button class="button is-info" v-on:click="prevStep">Back</button>
-                 </div>
-             </div>
+                <!-- heading -->
+             
              <div class="show-content">
-                <h1 style="text-align: center;" class="title is-primary ">Appointment Confirmed</h1>
+                 
+                <!-- <h1 style="text-align: center;" class="title is-primary ">Appointment Confirmed</h1>
+                <p style="float: right;">
+                    <button v-on:click.prevent="printData"  class="button" style="border: 0;">
+                        <span class="icon">
+                            <i class="fas fa-print"></i>
+
+                        </span>
+                       
+                     </button>
+                 </p> -->
+                 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a class="nav-item" href="#">
+                            <img src="index.png" style="background-color: aquamarine;" alt="logo_img" width="122" height="28">
+                        </a>
+                  
+                     
+                    </div>
+                  
+                    <div id="navbarBasicExample" class="navbar-menu">
+                      <div class="navbar-start" style="margin-left: 80px;">
+                        <a class="navbar-item">
+                         
+                        
+                        <a class="navbar-item">
+                            Appointment Confirmed
+                        </a>
+                      
+                      </div>
+                  
+                      <div class="navbar-end">
+                        <div class="navbar-item">
+                            <p>
+                                <button v-on:click.prevent="printData"  class="button" style="border: 0;">
+                                    <span class="icon">
+                                        <i class="fas fa-print"></i>
+            
+                                    </span>
+                                   
+                                 </button>
+                             </p>
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
                 <hr>
-             <p class="subtitle">Patient Name : <strong>{{ bookingData.name }}</strong> </p>
+                <div class="columns is-vcentered">
+                    <div class="column is-4">
+                      <p class="bd-notification">Patien Name :</p>
+                    </div>
+                    <div class="column">
+                      <p class="bd-notification "> <strong>{{ bookingData.name }}</strong></p>
+                    </div>
+                  </div>
+                  <div class="columns is-vcentered">
+                    <div class="column is-4">
+                      <p class="bd-notification">Appointment Date :</p>
+                    </div>
+                    <div class="column">
+                      <p class="bd-notification "> <strong>{{ bookingData.appDate }}</strong></p>
+                    </div>
+                  </div>
+                  <div class="columns is-vcentered">
+                    <div class="column is-4">
+                      <p class="bd-notification">Time Start :</p>
+                    </div>
+                    <div class="column">
+                      <p class="bd-notification "> <strong>{{ bookingData.appTime }}</strong> </p>
+                    </div>
+                  </div>
+                  <div class="columns is-vcentered">
+                    <div class="column is-4">
+                      <p class="bd-notification">Time End :</p>
+                    </div>
+                    <div class="column">
+                      <p class="bd-notification "> <strong>{{ bookingData.appTimeS }}</strong> </p>
+                    </div>
+                  </div>
+                  <div class="columns is-vcentered">
+                    <div class="column is-4">
+                      <p class="bd-notification"> Status :</p>
+                    </div>
+                    <div class="column">
+                      <p class="bd-notification "> <strong>Confirmed</strong></p>
+                    </div>
+                  </div>
+                  <div class="columns is-vcentered">
+                    <div class="column is-4">
+                      <p class="bd-notification"> Address :</p>
+                    </div>
+                    <div class="column">
+                      <p class="bd-notification "> <strong>36/6, USHAS, Lane 3, Prakash Pathare Nagar Kharadi Diagonally,
+                        opposite to Radisson Blu, Pune, Maharashtra 411014</strong></p>
+                    </div>
+                  </div>
+             <!-- <p class="subtitle">Patient Name :       <strong>{{ bookingData.name }}</strong> </p>
              <p class="subtitle" > Appointment Date : <strong>{{ bookingData.appDate }} </strong></p>
-             <p class="subtitle"> Time : <strong>{{ bookingData.appTime }} </strong> To : <strong>{{ bookingData.appTimeS }}</strong> </p>
-             <p class="subtitle"> Status : <strong>Confirmed <strong> </p>
-             </div>
+             <p class="subtitle"> Time :    <strong>{{ bookingData.appTime }} </strong> To : <strong>{{ bookingData.appTimeS }}</strong> </p>
+             <p class="subtitle"> Status :            <strong>Confirmed <strong> </p>
+                <p class="subtitle"> Address :        <strong>36/6, USHAS, Lane 3, Prakash Pathare Nagar Kharadi Diagonally,
+                    opposite to Radisson Blu, Pune, Maharashtra 411014</strong></p> -->
+             </div> 
              
      
              <!-- <div class="field">
@@ -104,7 +185,7 @@
                      <button class="button is-info" type="pr"></button>
                  </div> -->
              
-                 <p class="button">
+                 <!-- <p class="button">
                     <button v-on:click.prevent="printData" class="button">
                         <span class="icon">
                             <i class="fas fa-print"></i>
@@ -112,8 +193,8 @@
                         </span>
                         <span>Print </span>
                      </button>
-                 </p>
-            
+                 </p> -->
+                 
             </section>
             
             </div>
@@ -134,7 +215,7 @@
                 <br>
                <button type="submit" v-on:click.prevent="nextStep" > Book</button>
             </form> -->
-       
+            
     
     <script src="index.js"></script>
 </body>
