@@ -19,9 +19,9 @@
      
 </head>
 <body>
-    <div id="form-data" class="container">
+    <div id="form-data" class="container" >
         
-        <section v-if="steps==1">
+        <section v-if="steps==1" style="margin-top:10px ;">
             <h1 class="title">Booking</h1>
             <p class="subtitle" >{{ error }}</p>
             <div class="fieldd">
@@ -86,7 +86,26 @@
                        
                      </button>
                  </p> -->
-                 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+                 <div class="head">
+                    <div>
+                      <img src="index.png" style="background-color: aquamarine;" alt="logo_img" width="122" height="28">
+                    </div>
+                    <div class="heading">
+                      <h2><strong>Appointment Confirmed</strong> </h2>
+                    </div>
+                    <div class="print">
+                      <p>
+                        <button v-on:click.prevent="printData"  class="button" style="border: 0;">
+                            <span class="icon">
+                                <i class="fas fa-print"></i>
+    
+                            </span>
+                           
+                         </button>
+                     </p>
+                    </div>
+                 </div>
+                 <!-- <nav class="navbar is-light" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
                         <a class="nav-item" href="#">
                             <img src="index.png" style="background-color: aquamarine;" alt="logo_img" width="122" height="28">
@@ -120,8 +139,32 @@
                         </div>
                       </div>
                     </div>
-                  </nav>
+                  </nav> -->
                 <hr>
+                <div class="columns is-vcentered">
+                  <div class="column is-4">
+                    <p class="bd-notification">Doctor :</p>
+                  </div>
+                  <div class="column">
+                    <p class="bd-notification "> <strong>Dr.Rajashree Fadnavis</strong></p>
+                  </div>
+                </div>
+                <!-- <div class="columns is-vcentered">
+                  <div class="column is-4">
+                    <p class="bd-notification">MPTH :</p>
+                  </div>
+                  <div class="column">
+                    <p class="bd-notification "> <strong>Certified Aquatic Therapist</strong></p>
+                  </div>
+                </div>
+                <div class="columns is-vcentered">
+                  <div class="column is-4">
+                    <p class="bd-notification">OTPT Registration No :</p>
+                  </div>
+                  <div class="column">
+                    <p class="bd-notification "> <strong>2012/08/PT/002486</strong></p>
+                  </div>
+                </div> -->
                 <div class="columns is-vcentered">
                     <div class="column is-4">
                       <p class="bd-notification">Patien Name :</p>
@@ -162,15 +205,15 @@
                       <p class="bd-notification "> <strong>Confirmed</strong></p>
                     </div>
                   </div>
-                  <div class="columns is-vcentered">
+                  <!-- <div class="columns is-vcentered">
                     <div class="column is-4">
                       <p class="bd-notification"> Address :</p>
                     </div>
                     <div class="column">
                       <p class="bd-notification "> <strong>36/6, USHAS, Lane 3, Prakash Pathare Nagar Kharadi Diagonally,
                         opposite to Radisson Blu, Pune, Maharashtra 411014</strong></p>
-                    </div>
-                  </div>
+                    </div> -->
+                  <!-- </div> -->
              <!-- <p class="subtitle">Patient Name :       <strong>{{ bookingData.name }}</strong> </p>
              <p class="subtitle" > Appointment Date : <strong>{{ bookingData.appDate }} </strong></p>
              <p class="subtitle"> Time :    <strong>{{ bookingData.appTime }} </strong> To : <strong>{{ bookingData.appTimeS }}</strong> </p>
@@ -194,7 +237,15 @@
                         <span>Print </span>
                      </button>
                  </p> -->
-                 
+                 <footer class="footer">
+                  <div class="content has-text-centered">
+                    <p>
+                      <strong> Address </strong> :36/6, USHAS, Lane 3, Prakash Pathare Nagar Kharadi Diagonally,
+                      opposite to Radisson Blu, Pune, Maharashtra 411014 . 
+                      
+                    </p>
+                  </div>
+                </footer>
             </section>
             
             </div>

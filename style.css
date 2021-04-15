@@ -8,3 +8,14 @@
     font-weight: bold;
     
 }
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+.heading{
+    font-size: 30px;
+    font-weight: bold;
+    
+    align-self: center;
+    align-items: center;
+}
